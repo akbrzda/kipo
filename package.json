@@ -55,6 +55,7 @@
   },
   "homepage": "https://github.com/akbrzda/online-course#readme",
   "dependencies": {
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.0",
+    "npm": "^8.9.0"
   }
 }

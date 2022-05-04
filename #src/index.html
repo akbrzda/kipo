@@ -2,16 +2,62 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Uni Stex - Crypto is Simple</title>
-  @@include("_styles.html")
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Главная</title>
+	@@include("_styles.html")
 </head>
+<div class="topbar">
+	<div class="container">
+		<div class="topbar__inner flex">
+			<ul class="topbar__menu-list flex">
+				<li class="topbar__menu-item"><a href="#" class="topbar__menu-link dropdown">Контакты</a></li>
+				<li class="topbar__menu-item"><a href="#" class="topbar__menu-link dropdown">Адреса</a></li>
+				<li class="topbar__menu-item"><a href="#" class="topbar__menu-link dropdown">Горячая линия</a></li>
+			</ul>
+			<a href="#" class="poorvision">Версия для слабовидящих</a>
+		</div>
+	</div>
+</div>
+<header class="header">
+	<div class="container">
+		<div class="header__inner">
+			<a href="/" class="header__logo"><img src="/img/logo.png" class="header__logo-img"></a>
+			<nav class="nav__top flex">
+				<ul class="menu__top-list flex">
+					<li class="menu__top-item"><a href="#" class="menu__top-link">Сведение об образовательной организации</a>
+					</li>
+					<li class="menu__top-item"><a href="#" class="menu__top-link">Дополнительные образования</a></li>
+				</ul>
+				<ul class="social__list flex">
+					<li class="social__item"><a href="https://ok.ru/" class="social__link">
+							<img src="/img/icons/social/ok.svg" class="social__icon"></a></li>
+					<li class="social__item"><a href="https://youtube.com/" class="social__link">
+							<img src="/img/icons/social/youtube.svg" class="social__icon"></a></li>
+					<li class="social__item"><a href="https://instagram.com/" class="social__link">
+							<img src="/img/icons/social/instagram.svg" class="social__icon"></a></li>
+					<li class="social__item"><a href="https://vk.com/" class="social__link">
+							<img src="/img/icons/social/vk.svg" class="social__icon"></a></li>
+				</ul>
+				<a href="tel:+78002502818" class="header__phone">8 800 250 28 18</a>
+			</nav>
+			<nav class="nav__bottom flex">
+				<ul class="menu__bottom-list flex">
+					<li class="menu__bottom-item"><a href="#" class="menu__bottom-link">Поступающему</a></li>
+					<li class="menu__bottom-item"><a href="#" class="menu__bottom-link">Студенту</a></li>
+					<li class="menu__bottom-item"><a href="#" class="menu__bottom-link">Преподавателю</a></li>
+					<li class="menu__bottom-item"><a href="#" class="menu__bottom-link">Воспитательная работа</a></li>
+				</ul>
+				<a href="" class="header__search-btn"><img src="/img/icons/search.svg" alt="" class="header__search-icon"></a>
+			</nav>
+		</div>
+	</div>
+</header>
 
 <body>
 
-  @@include("_scripts.html")
+	@@include("_scripts.html")
 </body>
 
 </html>
