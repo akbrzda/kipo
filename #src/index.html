@@ -8,54 +8,252 @@
 	<title>Главная</title>
 	@@include("_styles.html")
 </head>
-<div class="topbar">
-	<div class="container">
-		<div class="topbar__inner flex">
-			<ul class="topbar__menu-list flex">
-				<li class="topbar__menu-item"><a href="#" class="topbar__menu-link dropdown">Контакты</a></li>
-				<li class="topbar__menu-item"><a href="#" class="topbar__menu-link dropdown">Адреса</a></li>
-				<li class="topbar__menu-item"><a href="#" class="topbar__menu-link dropdown">Горячая линия</a></li>
-			</ul>
-			<a href="#" class="poorvision">Версия для слабовидящих</a>
-		</div>
-	</div>
-</div>
-<header class="header">
-	<div class="container">
-		<div class="header__inner">
-			<a href="/" class="header__logo"><img src="/img/logo.png" class="header__logo-img"></a>
-			<nav class="nav__top flex">
-				<ul class="menu__top-list flex">
-					<li class="menu__top-item"><a href="#" class="menu__top-link">Сведение об образовательной организации</a>
-					</li>
-					<li class="menu__top-item"><a href="#" class="menu__top-link">Дополнительные образования</a></li>
-				</ul>
-				<ul class="social__list flex">
-					<li class="social__item"><a href="https://ok.ru/" class="social__link">
-							<img src="/img/icons/social/ok.svg" class="social__icon"></a></li>
-					<li class="social__item"><a href="https://youtube.com/" class="social__link">
-							<img src="/img/icons/social/youtube.svg" class="social__icon"></a></li>
-					<li class="social__item"><a href="https://instagram.com/" class="social__link">
-							<img src="/img/icons/social/instagram.svg" class="social__icon"></a></li>
-					<li class="social__item"><a href="https://vk.com/" class="social__link">
-							<img src="/img/icons/social/vk.svg" class="social__icon"></a></li>
-				</ul>
-				<a href="tel:+78002502818" class="header__phone">8 800 250 28 18</a>
-			</nav>
-			<nav class="nav__bottom flex">
-				<ul class="menu__bottom-list flex">
-					<li class="menu__bottom-item"><a href="#" class="menu__bottom-link">Поступающему</a></li>
-					<li class="menu__bottom-item"><a href="#" class="menu__bottom-link">Студенту</a></li>
-					<li class="menu__bottom-item"><a href="#" class="menu__bottom-link">Преподавателю</a></li>
-					<li class="menu__bottom-item"><a href="#" class="menu__bottom-link">Воспитательная работа</a></li>
-				</ul>
-				<a href="" class="header__search-btn"><img src="/img/icons/search.svg" alt="" class="header__search-icon"></a>
-			</nav>
-		</div>
-	</div>
-</header>
 
 <body>
+	@@include("_header.html")
+
+	<section class="slider">
+		<div class="container">
+			<div class="slider__inner"></div>
+		</div>
+	</section>
+
+	<section class="news">
+		<div class="container">
+			<div class="news__inner">
+				<div class="news__top">
+					<h2 class="title">Новости для поступающих</h2>
+					<a href="#" class="all-btn">Все новости</a>
+				</div>
+
+				<ul class="news__list">
+					<li class="news__list-item">
+						<a href="#">
+							<img src="/img/news/1.png" alt="" class="news__list-img">
+							<p class="news__list-title">Семинар по вопросам взаимодействия с национально-культурными....</p>
+							<span class="news__list-meta">10 ноября 2021</span>
+						</a>
+					</li>
+					<li class="news__list-item">
+						<a href="#">
+							<img src="/img/news/2.png" alt="" class="news__list-img">
+							<p class="news__list-title">Семинар по вопросам взаимодействия с национально-культурными....</p>
+							<span class="news__list-meta">10 ноября 2021</span>
+						</a>
+					</li>
+					<li class="news__list-item">
+						<a href="#">
+							<img src="/img/news/3.png" alt="" class="news__list-img">
+							<p class="news__list-title">Семинар по вопросам взаимодействия с национально-культурными....</p>
+							<span class="news__list-meta">10 ноября 2021</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="specialty">
+		<div class="container">
+			<div class="specialty__inner">
+				<div class="specialty__top">
+					<h2 class="title">Специальности</h2>
+					<label>
+						<input type="text" name="search" placeholder="Быстрый поиск специальности" class="specialty__search">
+					</label>
+					<a href="#" class="all-btn">Все специальности</a>
+				</div>
+
+				<ul class="specialty__list">
+					<li class="specialty__list-item">
+						<p class="specialty__list-info">
+							<span class="specialty__list-title">Фармация</span>
+							<span class="specialty__list-desc"></span>
+						</p>
+						<img src="/img/icons/specialty/1.svg" class="specialty__list-icon">
+					</li>
+					<li class="specialty__list-item">
+						<p class="specialty__list-info">
+							<span class="specialty__list-title">Гостиничное дело (ТОП-50)</span>
+							<span class="specialty__list-desc">Специалист по гостеприимству</span>
+						</p>
+						<img src="/img/icons/specialty/2.svg" class="specialty__list-icon">
+					</li>
+					<li class="specialty__list-item">
+						<p class="specialty__list-info">
+							<span class="specialty__list-title">Туризм</span>
+							<span class="specialty__list-desc">Квалификация — специалист по туризму</span>
+						</p>
+						<img src="/img/icons/specialty/3.svg" class="specialty__list-icon">
+					</li>
+					<li class="specialty__list-item">
+						<p class="specialty__list-info">
+							<span class="specialty__list-title">Преподавание в начальных классах</span>
+							<span class="specialty__list-desc">Учитель начальных классов</span>
+						</p>
+						<img src="/img/icons/specialty/4.svg" class="specialty__list-icon">
+					</li>
+					<li class="specialty__list-item">
+						<p class="specialty__list-info">
+							<span class="specialty__list-title">Социальная работа</span>
+							<span class="specialty__list-desc">Специалист по социальной работе</span>
+						</p>
+						<img src="/img/icons/specialty/5.svg" class="specialty__list-icon">
+					</li>
+					<li class="specialty__list-item">
+						<p class="specialty__list-info">
+							<span class="specialty__list-title">Медицинская оптика</span>
+							<span class="specialty__list-desc">Медицинский оптик</span>
+						</p>
+						<img src="/img/icons/specialty/6.svg" class="specialty__list-icon">
+					</li>
+					<li class="specialty__list-item">
+						<p class="specialty__list-info">
+							<span class="specialty__list-title">Сестринское дело</span>
+							<span class="specialty__list-desc">Медицинская сестра / медицинский брат</span>
+						</p>
+						<img src="/img/icons/specialty/7.svg" class="specialty__list-icon">
+					</li>
+					<li class="specialty__list-item">
+						<p class="specialty__list-info">
+							<span class="specialty__list-title">Лабораторная диагностика</span>
+							<span class="specialty__list-desc">Медицинский лабораторный техник</span>
+						</p>
+						<img src="/img/icons/specialty/8.svg" class="specialty__list-icon">
+					</li>
+					<li class="specialty__list-item">
+						<p class="specialty__list-info">
+							<span class="specialty__list-title">Земельно-имущественные отношения</span>
+							<span class="specialty__list-desc">специалист по земельно-имущественным отношениям</span>
+						</p>
+						<img src="/img/icons/specialty/9.svg" class="specialty__list-icon">
+					</li>
+					<li class="specialty__list-item">
+						<p class="specialty__list-info">
+							<span class="specialty__list-title">Специальное дошкольное образование</span>
+							<span class="specialty__list-desc">Воспитатель детей дошкольного возраста с отклонениями в развитии
+								и с сохранным
+								развитием</span>
+						</p>
+						<img src="/img/icons/specialty/1.svg" class="specialty__list-icon">
+					</li>
+					<li class="specialty__list-item">
+						<p class="specialty__list-info">
+							<span class="specialty__list-title">Операционная деятельность в логистике</span>
+							<span class="specialty__list-desc">Операционный логист</span>
+						</p>
+						<img src="/img/icons/specialty/2.svg" class="specialty__list-icon">
+					</li>
+					<li class="specialty__list-item">
+						<p class="specialty__list-info">
+							<span class="specialty__list-title">Банковское дело</span>
+							<span class="specialty__list-desc">Специалист банковского дела</span>
+						</p>
+						<img src="/img/icons/specialty/3.svg" class="specialty__list-icon">
+					</li>
+					<li class="specialty__list-item">
+						<p class="specialty__list-info">
+							<span class="specialty__list-title">Финансы</span>
+							<span class="specialty__list-desc">Финансист</span>
+						</p>
+						<img src="/img/icons/specialty/4.svg" class="specialty__list-icon">
+					</li>
+					<li class="specialty__list-item">
+						<p class="specialty__list-info">
+							<span class="specialty__list-title">Экономика и бухгалтерский учет</span>
+							<span class="specialty__list-desc">Бухгалтер</span>
+						</p>
+						<img src="/img/icons/specialty/5.svg" class="specialty__list-icon">
+					</li>
+					<li class="specialty__list-item">
+						<p class="specialty__list-info">
+							<span class="specialty__list-title">Право и судебное администрирование</span>
+							<span class="specialty__list-desc">Медицинский оптик</span>
+						</p>
+						<img src="/img/icons/specialty/6.svg" class="specialty__list-icon">
+					</li>
+					<li class="specialty__list-item">
+						<p class="specialty__list-info">
+							<span class="specialty__list-title">Правоохранительная деятельность</span>
+							<span class="specialty__list-desc">Юрист</span>
+						</p>
+						<img src="/img/icons/specialty/7.svg" class="specialty__list-icon">
+					</li>
+					<li class="specialty__list-item">
+						<p class="specialty__list-info">
+							<span class="specialty__list-title">Право и организация социального обеспечения</span>
+							<span class="specialty__list-desc">Юрист</span>
+						</p>
+						<img src="/img/icons/specialty/8.svg" class="specialty__list-icon">
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="about">
+		<div class="container">
+			<div class="about__inner">
+				<div class="about__top">
+					<div class="about__top-video">
+						<iframe width="544" height="368" src="https://www.youtube.com/embed/c18441Eh_WE" frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen></iframe>
+					</div>
+					<div class="about__top-info">
+						<h2 class="title">О нашем институте</h2>
+						<p class="about__top-desc">Мы рады приветствовать Вас на официальном сайте Кубанского института
+							профессионального
+							образования.</p>
+						<p class="about__top-desc2">Наш институт (первоначальное название ИЭиУ КГМА) создан в 1997 году по
+							инициативе
+							Кубанской государственной медицинской академии при поддержке краевых департаментов здравоохранения и
+							образования
+							и науки.</p>
+					</div>
+				</div>
+				<ul class="about__stat-list">
+					<li class="about__stat-item">
+						<p class="about__stat-count">3 500+</p>
+						<span class="about__stat-title">Cтудентов на базе 9 и 11 кл</span>
+					</li>
+					<li class="about__stat-item">
+						<p class="about__stat-count">18</p>
+						<span class="about__stat-title">Cпециальностей, есть уникальные для Краснодарского края</span>
+					</li>
+					<li class="about__stat-item">
+						<p class="about__stat-count">150+</p>
+						<span class="about__stat-title">Преподавателей, научных сотрудников и кандидатов наук </span>
+					</li>
+					<li class="about__stat-item">
+						<p class="about__stat-count">82</p>
+						<span class="about__stat-title">Аудитории для лекционных, практических и лабораторных занятий</span>
+					</li>
+				</ul>
+				<ul class="about__address-list">
+					<li class="about__address-item">
+						<a href="#">
+							<img src="/img/address/1.png" alt="" class="about__address-img">
+							<p class="about__address-text">Виртуальный тур Садовая, 218</p>
+						</a>
+					</li>
+					<li class="about__address-item">
+						<a href="#">
+							<img src="/img/address/1.png" alt="" class="about__address-img">
+							<p class="about__address-text">Виртуальный тур Красноармейская,51</p>
+						</a>
+					</li>
+					<li class="about__address-item">
+						<a href="#">
+							<img src="/img/address/1.png" alt="" class="about__address-img">
+							<p class="about__address-text">Виртуальный тур Красноармейская,51</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
 
 	@@include("_scripts.html")
 </body>
