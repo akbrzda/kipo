@@ -24,12 +24,56 @@ $(".stages__list-item").on("click", function (e) {
 $('.partners__list').slick({
 	slidesToShow: 5,
 	slidesToScroll: 5,
-	prevArrow: $('.slider-prev'),
-	nextArrow: $('.slider-next')
+	prevArrow: $('.partners-prev'),
+	nextArrow: $('.partners-next'),
+	responsive: [{
+			breakpoint: 1024,
+			settings: {
+				slidesToShow: 4,
+				slidesToScroll: 4,
+			}
+		},
+		{
+			breakpoint: 768,
+			settings: {
+				slidesToShow: 2,
+				slidesToScroll: 2
+			}
+		},
+		{
+			breakpoint: 480,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			}
+		}
+	]
 });
-$('.slider__list').slick({
-	slidesToShow: 1,
-	slidesToScroll: 1,
-	prevArrow: $('.slider-prev'),
-	nextArrow: $('.slider-next')
+// $('.slider__list').slick({
+// 	slidesToShow: 1,
+// 	slidesToScroll: 1,
+// 	prevArrow: $('.slider-prev'),
+// 	nextArrow: $('.slider-next')
+// });
+var swiper = new Swiper(".slider__list", {
+	loop: true,
+	       autoplay: {
+	       	delay: 2500,
+	       	disableOnInteraction: false,
+	       },
+	navigation: {
+		nextEl: ".slider-next",
+		prevEl: ".slider-prev",
+	},
 });
+const burger = document.querySelector(".burger-menu");
+const menu = document.querySelector(".mmenu");
+const body = document.body;
+
+burger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+	burger.classList.toggle("active");
+	menu.classList.toggle("active");
+	body.classList.toggle("hidden");
+}

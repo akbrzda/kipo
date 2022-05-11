@@ -1,4 +1,7 @@
-const { src, dest } = require("gulp");
+const {
+	src,
+	dest
+} = require("gulp");
 
 // Конфигурация
 const path = require("../config/path.js");
@@ -16,18 +19,24 @@ const webpCss = require("gulp-webp-css");
 
 // Обработка в CSS
 const css = () => {
-  return src(path.css.src)
-    .pipe(concat("style.css"))
-    .pipe(cssimport())
-    .pipe(webpCss())
-    .pipe(autoprefixer())
-    .pipe(cssMediaQueries())
-    .pipe(size({ title: "style.css" }))
-    .pipe(dest(path.css.dest))
-    .pipe(rename({ suffix: ".min" }))
-    .pipe(csso())
-    .pipe(size({ title: "style.min.css" }))
-    .pipe(dest(path.cssmin.dest));
+	return src(path.css.src)
+		.pipe(concat("style.css"))
+		.pipe(cssimport())
+		// .pipe(webpCss())
+		.pipe(autoprefixer())
+		.pipe(cssMediaQueries())
+		.pipe(size({
+			title: "style.css"
+		}))
+		.pipe(dest(path.css.dest))
+		.pipe(rename({
+			suffix: ".min"
+		}))
+		.pipe(csso())
+		.pipe(size({
+			title: "style.min.css"
+		}))
+		.pipe(dest(path.cssmin.dest));
 };
 
 module.exports = css;

@@ -1,4 +1,7 @@
-const { src, dest } = require("gulp");
+const {
+	src,
+	dest
+} = require("gulp");
 
 // Конфигурация
 const path = require("../config/path.js");
@@ -15,17 +18,23 @@ const webpCss = require("gulp-webp-css");
 
 // Обработка в SCSS
 const scss = () => {
-  return src(path.scss.src)
-    .pipe(sass())
-    .pipe(webpCss())
-    .pipe(autoprefixer())
-    .pipe(cssMediaQueries())
-    .pipe(size({ title: "До сжатия main.scss:" }))
-    .pipe(dest(path.scss.dest))
-    .pipe(rename({ suffix: ".min" }))
-    .pipe(csso())
-    .pipe(size({ title: "После сжатия main.min.css:" }))
-    .pipe(dest(path.cssmin.dest));
+	return src(path.scss.src)
+		.pipe(sass())
+		//.pipe(webpCss())
+		.pipe(autoprefixer())
+		.pipe(cssMediaQueries())
+		.pipe(size({
+			title: "До сжатия main.scss:"
+		}))
+		.pipe(dest(path.scss.dest))
+		.pipe(rename({
+			suffix: ".min"
+		}))
+		.pipe(csso())
+		.pipe(size({
+			title: "После сжатия main.min.css:"
+		}))
+		.pipe(dest(path.cssmin.dest));
 };
 
 module.exports = scss;

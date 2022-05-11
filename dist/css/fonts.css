@@ -1,10 +1,4 @@
-@font-face {
-  font-family: "Foco";
-  src: url("../../font/Foco-Bold.ttf") format("truetype");
-  font-style: bold;
-  font-weight: 700;
-  font-display: swap;
-}
+@import url("http://fonts.cdnfonts.com/css/foco");
 
 @font-face {
   font-family: "Roboto";
@@ -28,8 +22,4 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-}
-
-@supports (-webkit-appearance:none) {
-
 }
