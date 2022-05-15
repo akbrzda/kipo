@@ -63,11 +63,21 @@ body {
 	line-height: 1;
 	transition: 3s;
 	color: $mainTextColor;
+	overflow-x: hidden;
 }
 
 body.hidden {
 	height: 100vh;
 	overflow-y: hidden;
+}
+
+.hidden .header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	background: #fff;
 }
 
 .bold-big {
@@ -136,13 +146,13 @@ body.hidden {
 
 	&::after {
 		content: '';
-		background: url(../../img/icons/right-arrow.svg);
+		background: url(../../img/icons/right-arrow.svg) no-repeat;
 		filter: invert(36%) sepia(83%) saturate(4177%) hue-rotate(13deg) brightness(100%) contrast(95%);
 		width: 24px;
 		height: 24px;
 		position: absolute;
 		transform: rotate(45deg);
-		top: 0;
+		top: 6px;
 		right: 0;
 	}
 
@@ -159,20 +169,21 @@ body.hidden {
 .slider-next,
 .partners-prev,
 .partners-next {
-	width: 44px;
-	height: 44px;
-	border-radius: 50%;
-	position: relative;
+	position: relative !important;
+	top: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
 	background: #FFFFFF;
 	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
-	cursor: pointer;
+	border-radius: 50px;
+	width: 44px !important;
+	height: 44px !important;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
 	&:hover img {
 		filter: invert(36%) sepia(83%) saturate(4177%) hue-rotate(13deg) brightness(100%) contrast(95%);
-
 	}
 
 	& img {
@@ -183,7 +194,6 @@ body.hidden {
 
 .slider-next,
 .partners-next {
-	transform: rotate(180deg);
 	margin-left: 21px;
 }
 
@@ -211,7 +221,8 @@ body.hidden {
 	}
 
 	&__inner {
-		height: 100vh;
+		max-height: 100vh;
+		height: 100%;
 		position: relative;
 	}
 
@@ -259,9 +270,8 @@ body.hidden {
 				border-color: $mainOrange;
 				transform: rotate(180deg);
 
-				&::before,
-				&::after {
-					background-color: $mainOrange;
+				img {
+					filter: invert(36%) sepia(83%) saturate(4177%) hue-rotate(13deg) brightness(100%) contrast(95%);
 
 				}
 			}
@@ -276,10 +286,8 @@ body.hidden {
 				border-color: $mainOrange;
 
 
-				&::before,
-				&::after {
-					background-color: $mainOrange;
-
+				img {
+					filter: invert(36%) sepia(83%) saturate(4177%) hue-rotate(13deg) brightness(100%) contrast(95%);
 				}
 			}
 		}
@@ -300,29 +308,12 @@ body.hidden {
 			border-radius: 50%;
 			position: relative;
 			transition: 0.3s;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 
-			&::before {
-				content: '';
-				position: absolute;
-				top: 50%;
-				left: 22%;
-				width: 8px;
-				height: 1px;
-				border-radius: 1px;
-				background-color: $mainTextColor;
-				transform: rotate(45deg);
-			}
-
-			&::after {
-				content: '';
-				position: absolute;
-				top: 50%;
-				right: 22%;
-				width: 8px;
-				height: 1px;
-				border-radius: 1px;
-				background-color: $mainTextColor;
-				transform: rotate(-45deg);
+			img {
+				filter: brightness(0) saturate(100%) invert(25%) sepia(38%) saturate(12%) hue-rotate(134deg) brightness(99%) contrast(95%);
 			}
 		}
 	}
@@ -804,8 +795,11 @@ body.hidden {
 	background: url('../../img/slider-bg.png') no-repeat;
 	height: 634px;
 	background-size: cover !important;
-	position: relative;
 	background-position: 80% !important;
+
+	&__inner {
+		position: relative;
+	}
 
 	&__list {
 		&-item {
@@ -816,11 +810,12 @@ body.hidden {
 	}
 
 	&__nav {
-		position: absolute;
-		bottom: 40px;
-		right: 15px;
 		display: flex;
-		z-index: 2;
+		align-items: center;
+		justify-content: flex-end;
+		position: absolute;
+		right: 15px;
+		bottom: 50px;
 	}
 
 	&__info {
@@ -857,7 +852,7 @@ body.hidden {
 
 			&::after {
 				content: '';
-				background: url(../../img/icons/right-arrow.svg);
+				background: url(../../img/icons/right-arrow.svg) no-repeat;
 				filter: invert(36%) sepia(83%) saturate(4177%) hue-rotate(13deg) brightness(100%) contrast(95%);
 			}
 
@@ -1160,6 +1155,12 @@ body.hidden {
 	background-color: #FAF8F8;
 	padding: 129px 0 120px;
 
+	.slider__progressbar {
+		position: relative;
+		left: 0;
+		top: 32px;
+	}
+
 	&__list {
 		display: flex;
 		padding: 40px 0 10px;
@@ -1173,7 +1174,6 @@ body.hidden {
 			border: 1px solid #E6E6E6;
 			border-radius: 6px;
 			background-color: #FFFFFF;
-			margin: 0 6px;
 			display: flex !important;
 			justify-content: center;
 			align-items: center;
@@ -1370,10 +1370,8 @@ body.hidden {
 				border-color: $mainOrange;
 				transition: 0.3s;
 
-				&::before,
-				&::after {
-					background-color: $mainOrange;
-
+				img {
+					filter: invert(36%) sepia(83%) saturate(4177%) hue-rotate(13deg) brightness(100%) contrast(95%);
 				}
 
 			}
@@ -1407,11 +1405,8 @@ body.hidden {
 			&:hover .usefulinf__list-icon {
 				border-color: $mainOrange;
 
-
-				&::before,
-				&::after {
-					background-color: $mainOrange;
-
+				img {
+					filter: invert(36%) sepia(83%) saturate(4177%) hue-rotate(13deg) brightness(100%) contrast(95%);
 				}
 			}
 		}
@@ -1441,29 +1436,13 @@ body.hidden {
 			top: 5px;
 			position: absolute;
 			transition: 0.3s;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 
-			&::before {
-				content: '';
-				position: absolute;
-				top: 50%;
-				left: 24%;
-				width: 14px;
-				height: 1px;
-				border-radius: 1px;
-				background-color: #D4D4D4;
-				transform: rotate(45deg);
-			}
-
-			&::after {
-				content: '';
-				position: absolute;
-				top: 52%;
-				right: 24%;
-				width: 13px;
-				height: 1px;
-				border-radius: 1px;
-				background-color: #D4D4D4;
-				transform: rotate(-45deg);
+			img {
+				transform: rotate(-90deg);
+				filter: brightness(0) saturate(100%) invert(93%) sepia(4%) saturate(6%) hue-rotate(334deg) brightness(92%) contrast(90%);
 			}
 		}
 	}
@@ -1878,10 +1857,8 @@ body.hidden {
 				border-color: $mainOrange;
 				transform: rotate(180deg);
 
-				&::before,
-				&::after {
-					background-color: $mainOrange;
-
+				img {
+					filter: invert(36%) sepia(83%) saturate(4177%) hue-rotate(13deg) brightness(100%) contrast(95%);
 				}
 			}
 
@@ -1898,10 +1875,8 @@ body.hidden {
 			&:hover .faq__list-icon {
 				border-color: $mainOrange;
 
-				&::before,
-				&::after {
-					background-color: $mainOrange;
-
+				img {
+					filter: invert(36%) sepia(83%) saturate(4177%) hue-rotate(13deg) brightness(100%) contrast(95%);
 				}
 			}
 		}
@@ -1922,29 +1897,12 @@ body.hidden {
 			border: 1px solid #d4d4d4;
 			border-radius: 50%;
 			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 
-			&::before {
-				content: '';
-				position: absolute;
-				top: 50%;
-				left: 24%;
-				width: 10px;
-				height: 1px;
-				border-radius: 1px;
-				background-color: #D4D4D4;
-				transform: rotate(45deg);
-			}
-
-			&::after {
-				content: '';
-				position: absolute;
-				top: 50%;
-				right: 23%;
-				width: 10px;
-				height: 1px;
-				border-radius: 1px;
-				background-color: #D4D4D4;
-				transform: rotate(-45deg);
+			img {
+				filter: brightness(0) saturate(100%) invert(93%) sepia(4%) saturate(6%) hue-rotate(334deg) brightness(92%) contrast(90%);
 			}
 		}
 	}
@@ -2031,11 +1989,11 @@ body.hidden {
 
 	&::after {
 		content: '';
-		background: url(../../img/icons/right-arrow.svg);
+		background: url(../../img/icons/right-arrow.svg) no-repeat;
 		filter: invert(36%) sepia(83%) saturate(4177%) hue-rotate(13deg) brightness(100%) contrast(95%);
 		width: 24px;
 		height: 24px;
-		top: -3px;
+		top: -12px;
 		left: 0;
 		transform: rotate(-135deg);
 		position: absolute;
@@ -2606,12 +2564,14 @@ body.hidden {
 
 		&::after {
 			content: "";
-			background: url(../../img/icons/right-arrow.svg);
+			background: url(../../img/icons/right-arrow-white.svg) no-repeat;
 			width: 24px;
 			height: 24px;
 			position: absolute;
-			top: -2px;
+			top: -4px;
 			right: -34px;
+			filter: brightness(0) saturate(100%) invert(25%) sepia(38%) saturate(12%) hue-rotate(134deg) brightness(99%) contrast(95%);
+			transform: rotate(-45deg);
 		}
 
 		&:hover {
@@ -2627,6 +2587,147 @@ body.hidden {
 .three-columns {
 	width: 33%;
 	min-height: 100px;
+}
+
+.slider__progressbar {
+	position: absolute;
+	left: 15px;
+	bottom: 62px;
+	z-index: 2;
+}
+
+.slider__progressbar {
+	display: flex;
+	align-items: center;
+}
+
+.numbers-slide {
+	display: flex;
+	align-items: center;
+}
+
+.ns-active {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 20px;
+	color: #E05206;
+	margin-right: 4px;
+}
+
+.swiper-progress-bar {
+	position: relative;
+	width: 100px;
+	display: block;
+	z-index: 1;
+	height: 2px;
+}
+
+.swiper-progress-bar.active .slide_progress-bar {
+	opacity: 1;
+}
+
+.swiper-progress-bar .slide_progress-bar {
+	position: absolute;
+	height: 2px;
+	background: rgba(0, 0, 0, 0.06);
+	border-radius: 2px;
+	width: auto;
+	clear: both;
+	opacity: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.swiper-progress-bar.animate .slide_progress-bar:after {
+	transition: width linear;
+	transition-delay: unset;
+	width: 100%;
+	transition-duration: 5s;
+}
+
+.swiper-progress-bar .slide_progress-bar:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #E05206;
+	border-radius: 2px;
+	height: 100%;
+	width: 0;
+	content: "";
+	transition: 0.1s width linear;
+}
+
+.ns-total {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 20px;
+	color: #494747;
+	margin-left: 4px;
+}
+
+.ns-active2 {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 20px;
+	color: #E05206;
+	margin-right: 4px;
+}
+
+.swiper-progress-bar2 {
+	position: relative;
+	width: 100px;
+	display: block;
+	z-index: 1;
+	height: 2px;
+}
+
+.swiper-progress-bar2.active .slide_progress-bar2 {
+	opacity: 1;
+}
+
+.swiper-progress-bar2 .slide_progress-bar2 {
+	position: absolute;
+	height: 2px;
+	background: rgba(0, 0, 0, 0.06);
+	border-radius: 2px;
+	width: auto;
+	clear: both;
+	opacity: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.swiper-progress-bar2.animate .slide_progress-bar2:after {
+	transition: width linear;
+	transition-delay: unset;
+	width: 100%;
+	transition-duration: 5s;
+}
+
+.swiper-progress-bar2 .slide_progress-bar2:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #E05206;
+	border-radius: 2px;
+	height: 100%;
+	width: 0;
+	content: "";
+	transition: 0.1s width linear;
+}
+
+.ns-total2 {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 20px;
+	color: #494747;
+	margin-left: 4px;
 }
 
 @import "media.scss"

@@ -436,13 +436,14 @@
 
   		&::after {
   			content: '';
-  			background: url(../../img/icons/right-arrow.svg);
+  			background: url(../../img/icons/right-arrow.svg) no-repeat;
   			filter: invert(36%) sepia(83%) saturate(4177%) hue-rotate(13deg) brightness(100%) contrast(95%);
   			width: 16px;
   			height: 16px;
-  			top: 12px;
+  			top: 16px;
   			right: 16px;
   			position: absolute;
+  			transform: rotate(45deg);
   		}
 
   		&:hover {
@@ -638,7 +639,6 @@
   	}
 
   	.slider {
-  		height: 100%;
   		background-position: 0 !important;
 
   		&__list {
@@ -660,6 +660,7 @@
   				padding: 12px 16px;
   				display: block;
   				width: 100%;
+  				margin-top: 64px;
   				background-color: rgba(255, 72, 0, 0.1);
   				border: none;
   				border-radius: 6px;
@@ -667,7 +668,7 @@
   				transition: ease 0.3s;
 
   				&::after {
-  					top: 12px;
+  					top: 16px;
   					right: 16px;
   				}
 
@@ -707,26 +708,28 @@
   		&__nav {
   			width: 100%;
   			bottom: 0;
+  			left: 0;
   			right: 0;
+  			height: 44px;
   			top: 25%;
   			justify-content: space-between;
+  			z-index: 2;
 
   			.slider-next,
   			.slider-prev {
-  				width: 82px;
-  				height: 82px;
-  				display: flex;
-  				align-items: center;
+  				width: 82px !important;
+  				height: 82px !important;
+  				justify-content: flex-start;
+  				position: relative;
   			}
 
   			.slider-next {
-  				right: -60px;
-  				justify-content: flex-end;
+  				right: -75px !important;
   				left: initial !important;
   			}
 
   			.slider-prev {
-  				left: -60px;
+  				left: -75px !important;
   				justify-content: flex-end;
   			}
   		}
@@ -945,6 +948,10 @@
 
   	}
 
+  	.container {
+  		position: initial !important;
+  	}
+
   	.nav__back {
   		padding: 21px 0 21px 44px;
   		color: $mainOrange;
@@ -962,6 +969,7 @@
   			height: 24px;
   			background: url('../../img/icons/arrow.svg');
   			top: 16px;
+  			left: 8px;
   			transform: none;
   		}
   	}
@@ -1091,8 +1099,8 @@
 
   				&-img {
   					margin-bottom: 20px;
-						width: 100%;
-						margin-right: 0;
+  					width: 100%;
+  					margin-right: 0;
   				}
 
   				&-title {
