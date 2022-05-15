@@ -38,6 +38,10 @@
   	.all-mbtn {
   		display: none;
   	}
+
+  	.hero__steps {
+  		display: none;
+  	}
   }
 
   @media (min-width: 576px) {
@@ -49,6 +53,15 @@
   @media(max-width: 1024px) {
   	.search-input {
   		width: 100%;
+  	}
+
+  	.banner.other-bg {
+  		padding: 32px 260px 32px 32px;
+  	}
+
+  	.banner__img {
+  		height: 228px;
+  		right: 25px;
   	}
 
   	.header {
@@ -384,6 +397,26 @@
   }
 
   @media(max-width: 768px) {
+  	.banner.other-bg {
+  		padding: 40px 32px 0;
+  		max-height: 405px;
+  	}
+
+  	.banner__img {
+  		position: relative;
+  		float: right;
+  	}
+
+  	.other-bg .banner__title {
+  		font-size: 28px;
+  		line-height: 32px;
+  	}
+
+  	.other-bg .banner__desc {
+  		font-size: 14px;
+  		line-height: 16px;
+  	}
+
   	.all-btn {
   		display: none;
   	}
@@ -444,9 +477,20 @@
   				padding: 147px 0;
   			}
 
+  			&-title {
+  				font-size: 16px;
+  				line-height: 20px;
+  			}
+
+  			&-desc {
+  				font-size: 12px;
+  				line-height: 14px;
+  			}
+
   			&-list {
   				top: 21px;
   				flex-wrap: wrap;
+  				padding: 0 15px;
   			}
 
   			&-item {
@@ -869,26 +913,71 @@
   		}
   	}
 
-  	.information .container {
-  		padding-top: 0;
+  	.documents__list.two-columns .documents__list-item {
+  		width: 100%;
+  	}
+
+  	.resources__list {
+  		&-item {
+  			width: 100%;
+  		}
+  	}
+
+  	.information {
+
+  		.container {
+  			padding-top: 0;
+  		}
+
+  		.hero__steps {
+  			display: block;
+
+  			&-list {
+  				z-index: 2;
+  				margin-top: -48px;
+  				top: -6px;
+  			}
+  		}
+
+  		.hero__steps .container {
+  			padding: 213px 0;
+  		}
+
   	}
 
   	.nav__back {
-  		padding: 21px 0 21px 29px;
-  		border: 0;
-  		color: $mainTextColor;
+  		padding: 21px 0 21px 44px;
+  		color: $mainOrange;
   		font-weight: 500;
   		font-size: 18px;
   		line-height: 14px;
+  		border: 1px solid #E6E6E6;
   		text-align: left;
+  		margin: 16px 0;
+  		display: block;
+  		border-radius: 4px;
 
   		&::after {
   			width: 24px;
   			height: 24px;
   			background: url('../../img/icons/arrow.svg');
-  			filter: none;
   			top: 16px;
   			transform: none;
+  		}
+  	}
+
+  	.students__list {
+  		flex-wrap: nowrap;
+  		overflow: scroll;
+  		width: 100vw;
+  		max-width: 100%;
+
+  		&::-webkit-scrollbar {
+  			width: 0;
+  		}
+
+  		&-item {
+  			max-width: 75%;
   		}
   	}
 
@@ -921,6 +1010,118 @@
   				line-height: 14px;
   			}
   		}
+
+  		.program {
+  			&__info {
+  				display: grid;
+  				padding-bottom: 40px;
+  				grid-template-columns: auto auto;
+
+  				&-item {
+  					border: none;
+  					border-radius: 6px;
+  					padding: 22px;
+  					width: 100%;
+  					margin: 0;
+  					border-bottom: 1px solid #E6E6E6;
+  					border-radius: 0;
+
+  					&:last-child {
+  						margin-right: 0;
+  					}
+  				}
+
+  				&-text1 {
+  					font-size: 24px;
+  					line-height: 28px;
+  				}
+
+  				&-text2 {
+  					font-size: 12px;
+  					line-height: 16px;
+  				}
+
+  			}
+
+  			&__gray-text {
+  				font-size: 12px;
+  				line-height: 16px;
+  			}
+
+  			&__desc {
+  				padding-bottom: 0;
+  				flex-wrap: wrap-reverse;
+
+  				& h3 {
+  					font-size: 16px;
+  					line-height: 18px;
+  				}
+
+  				&-text {
+  					font-size: 14px;
+  					line-height: 18px;
+  				}
+
+  				&-img {
+  					padding-bottom: 16px;
+
+  					img {
+  						border-radius: 6px;
+  					}
+  				}
+
+  				.content__info {
+  					padding-right: 0;
+  				}
+  			}
+
+  			&__practice {
+  				&-list {
+  					padding-top: 15px;
+  				}
+
+  				h3 {
+  					font-size: 16px;
+  					line-height: 20px;
+  				}
+
+  				&-item {
+  					flex-wrap: wrap;
+  				}
+
+  				&-img {
+  					margin-bottom: 20px;
+						width: 100%;
+						margin-right: 0;
+  				}
+
+  				&-title {
+  					font-size: 16px;
+  					line-height: 20px;
+  				}
+
+  				&-desc {
+  					font-size: 14px;
+  					line-height: 18px;
+  				}
+  			}
+  		}
+  	}
+
+  	.program__objects {
+  		&-list {
+  			padding-bottom: 26px;
+  		}
+
+  		&-title {
+  			font-size: 18px;
+  			line-height: 22px;
+  		}
+
+  		&-item {
+  			font-size: 14px;
+  			line-height: 18px;
+  		}
   	}
 
   	.careers {
@@ -928,10 +1129,6 @@
   	}
 
   	.content {
-  		&__title {
-  			font-size: 18px;
-  			line-height: 24px;
-  		}
 
   		&__info {
   			hr {
