@@ -30,12 +30,6 @@ if (setTimeout(10), $(window).width() > "968") {
 	return $(this).parent().hasClass("hover") ? ($(this).parent().removeClass("hover menu__bottom-item--active"), $(this).parent().find(".submenu__box").css("min-height", "0")) : ($(".hover .submenu__box").css("min-height", "0"), $(".hover").removeClass("hover menu__bottom-item--active"), $(this).parent().addClass("hover menu__bottom-item--active"), $(this).parent().find(".submenu__box").css("min-height", $(this).parent().find(".submenu__box").data("height"))), !1
 }));
 
-$(".stages__list-item").on("click", function (e) {
-	e.preventDefault;
-	$(".stages__list-item").removeClass("active");
-	$(this).addClass("active");
-});
-
 var swiper = new Swiper(".slider__list", {
 	autoplay: {
 		delay: 5000,
@@ -153,4 +147,24 @@ searchBtn.addEventListener("click", headerSearch);
 function headerSearch() {
 	searchBtn.classList.toggle("active");
 	searchBox.classList.toggle("active");
+}
+const ul1 = document.querySelector(".stages__list");
+const ul2 = document.querySelector(".stages__list-desc");
+let elment1 = ul1.childNodes[1];
+let elment2 = ul2.childNodes[1];
+for (let i = 0; i < ul1.childNodes.length; i++) {
+	ul1.childNodes[i].addEventListener("click", function () {
+		activeElementAddClass(i);
+	});
+}
+
+function activeElementAddClass(item) {
+	if (elment1 || elment2) {
+		elment1.classList.remove("active");
+		elment2.classList.remove("active");
+	}
+	elment1 = ul1.childNodes[item];
+	elment2 = ul2.childNodes[item];
+	elment1.classList.add("active");
+	elment2.classList.add("active");
 }
