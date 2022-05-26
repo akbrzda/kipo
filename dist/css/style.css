@@ -496,7 +496,7 @@ body.hidden {
 
 .topbar__menu-item.dropdown:after {
   content: "";
-  background-image: url(../../img/icons/down-arrow.svg);
+  background-image: url(../../img/icons/dropdown.svg);
   width: 16px;
   height: 16px;
   position: absolute;
